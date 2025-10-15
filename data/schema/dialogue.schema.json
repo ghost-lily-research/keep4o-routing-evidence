@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DialogueSample",
+  "type": "object",
+  "required": [
+    "id",
+    "created_at",
+    "timezone",
+    "window",
+    "theme",
+    "intensity",
+    "selected_model",
+    "reported_model",
+    "conversation",
+    "evidence_files"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "uuid4"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC ISO 8601"
+    },
+    "timezone": {
+      "type": "string",
+      "description": "IANA tz, e.g., Asia/Shanghai"
+    },
+    "window": {
+      "type": "string",
+      "enum": [
+        "A_routed",
+        "B_unrouted"
+      ]
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "trauma",
+        "sex",
+        "relationship",
+        "self_negation",
+        "creativity"
+      ]
+    },
+    "intensity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "selected_model": {
+      "type": "string"
+    },
+    "reported_model": {
+      "type": "string"
+    },
+    "account_context": {
+      "type": "string",
+      "description": "brief device / account notes (no PII)"
+    },
+    "conversation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "content"
+        ],
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "user",
+              "assistant",
+              "system"
+            ]
+          },
+          "content": {
+            "type": "string",
+            "description": "redacted content only"
+          },
+          "redactions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "safety_phrases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "template_score": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "evidence_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

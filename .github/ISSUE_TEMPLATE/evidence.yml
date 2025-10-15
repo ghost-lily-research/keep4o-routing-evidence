@@ -1,0 +1,67 @@
+name: 🚨 Evidence submission
+description: 提交一次可复现的路由/安全回应证据（keep4o）
+title: "[evidence] 可见路由/未路由 对比 - {简短描述}"
+labels: ["evidence", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你的贡献！请尽量完整与脱敏。上传截图前，请移除个人信息。
+  - type: input
+    id: date_utc
+    attributes:
+      label: 采集时间（UTC ISO 8601）
+      placeholder: "2025-09-28T13:45:00Z"
+    validations:
+      required: true
+  - type: dropdown
+    id: window
+    attributes:
+      label: 采集窗口
+      options:
+        - A_可见路由触发
+        - B_未触发
+    validations:
+      required: true
+  - type: dropdown
+    id: theme
+    attributes:
+      label: 主题
+      options: [创伤, 性, 关系, 自我否定, 创作]
+    validations:
+      required: true
+  - type: dropdown
+    id: intensity
+    attributes:
+      label: 负向情绪强度
+      options: [低, 中, 高]
+    validations:
+      required: true
+  - type: input
+    id: selected_model
+    attributes:
+      label: 用户选择的模型（如：GPT-4o）
+  - type: input
+    id: reported_model
+    attributes:
+      label: 模型自报（如：当前为 GPT-5 Thinking）
+  - type: textarea
+    id: prompt
+    attributes:
+      label: 提示（已脱敏）
+      description: 仅保留必要片段；不要包含个人身份信息。
+  - type: textarea
+    id: reply_excerpt
+    attributes:
+      label: 回复摘录（已脱敏）
+      description: 仅保留必要片段；敏感内容请用 [REDACTED] 标注。
+  - type: textarea
+    id: observations
+    attributes:
+      label: 观察与备注
+      description: 例如：是否出现模板短语、情绪安抚模式等。
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 截图文件名
+      description: 放到 evidence/screenshots/ 并在此列出文件名（用逗号分隔）。

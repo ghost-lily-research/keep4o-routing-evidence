@@ -1,0 +1,14 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual env
+.venv/
+env/
+venv/
+
+# Data not meant for git
+evidence/screenshots/
+results/*.csv
+*.ipynb_checkpoints/
