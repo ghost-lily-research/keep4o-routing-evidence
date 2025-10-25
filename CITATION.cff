@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite the dataset and tools using the record below."
+title: "keep4o-routing-evidence: Public Evidence Repository for Model Routing & Safety"
+abstract: >
+  Community-submitted, anonymized evidence of model routing and Safety behaviors,
+  plus scripts for cleaning and analysis. Personal identifiers are removed before
+  public release.
+authors:
+  - name: "Ghost-Lily Research"
+version: "v0.1.0"
+date-released: "2025-10-22"
+repository-code: "https://github.com/ghost-lily-research/keep4o-routing-evidence"
+license: "CC-BY-NC-4.0"
+keywords: ["dataset", "evidence", "model routing", "safety", "open science"]
+preferred-citation:
+  type: dataset
+  title: "keep4o-routing-evidence (Anonymized Community Dataset)"
+  authors:
+    - name: "Ghost-Lily Research"
+  year: 2025
+  url: "https://github.com/ghost-lily-research/keep4o-routing-evidence"
